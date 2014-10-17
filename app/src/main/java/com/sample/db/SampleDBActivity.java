@@ -3,6 +3,8 @@ package com.sample.db;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +34,9 @@ public class SampleDBActivity extends Activity {
             @Override
             public void onClick(View v) {
                 addRecordToDB();
+
+//                saveNameToSharedPref();
+
 //                updateDB();
 
 //                addRecordToCP();
@@ -44,9 +49,25 @@ public class SampleDBActivity extends Activity {
             @Override
             public void onClick(View v) {
                 showDBContents();
+
+//                showNameFromSharedPref();
 //                showCPContents();
             }
         });
+    }
+
+    private void showNameFromSharedPref() {
+        SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
+        String value = pref.getString("Key", "Default");
+        Toast.makeText(this, "Name from Pref: " + value, Toast.LENGTH_LONG).show();
+    }
+
+    private void saveNameToSharedPref() {
+        SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        String value = ((EditText) findViewById(R.id.nameField)).getText().toString();
+        editor.putString("Key", value);
+        editor.commit();
     }
 
     private void createDB() {
