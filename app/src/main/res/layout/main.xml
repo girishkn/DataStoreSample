@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+        <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Data to Store"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <EditText
+            android:id="@+id/idField"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:hint="ID"
+            android:inputType="text"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/nameField"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:hint="Name"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/phField"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:hint="Phone"
+            android:textSize="14dp" />
+
+        <!--
+             <EditText
+            android:id="@+id/addressField"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:hint="Address"
+            android:textSize="11dp" />
+        -->
+
+        <EditText
+            android:id="@+id/emailField"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save" />
+
+        <Button
+            android:id="@+id/showDBButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/saveButton"
+            android:text="ShowDB" />
+    </RelativeLayout>
+
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/results_text"/>-->
+
+    <ListView
+        android:id="@+id/results_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"></ListView>
+
+</LinearLayout>

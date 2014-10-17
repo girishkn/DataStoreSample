@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/D:/Android/training/AndroidStudio/SavingData/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="app_name">SampleDB</string>
+    <string name="hello">Hello World, SampleDBActivity!</string>
+
+</resources>
