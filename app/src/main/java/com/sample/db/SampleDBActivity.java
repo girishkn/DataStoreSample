@@ -24,8 +24,11 @@ public class SampleDBActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-		createDB();
-        initEventHandlers();
+		initEventHandlers();
+
+//        showNameFromSharedPref();
+
+//        createDB();
     }
 
     private void initEventHandlers() {
@@ -33,9 +36,8 @@ public class SampleDBActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                addRecordToDB();
-
-//                saveNameToSharedPref();
+                saveNameToSharedPref();
+//                addRecordToDB();
 
 //                updateDB();
 
@@ -48,9 +50,10 @@ public class SampleDBActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                showDBContents();
+                showNameFromSharedPref();
 
-//                showNameFromSharedPref();
+//                showDBContents();
+
 //                showCPContents();
             }
         });
@@ -58,7 +61,7 @@ public class SampleDBActivity extends Activity {
 
     private void showNameFromSharedPref() {
         SharedPreferences pref = getPreferences(Context.MODE_PRIVATE);
-        String value = pref.getString("Key", "Default");
+        String value = pref.getString("Key", "Empty");
         Toast.makeText(this, "Name from Pref: " + value, Toast.LENGTH_LONG).show();
     }
 
